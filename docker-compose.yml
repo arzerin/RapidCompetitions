@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./django-app
+    container_name: rapid_django
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./django-app:/app
+    env_file:
+      - ./django-app/.env
